@@ -1,6 +1,6 @@
 {
   "name": "thexa4-fusiondirectory_schema",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "thexa4",
   "summary": "Installs ldap schemas for using FusionDirectory",
   "license": "MIT",

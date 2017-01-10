@@ -4,7 +4,7 @@ class fusiondirectory_schema {
       comment  => 'Fusiondirectory repository',
       location => 'http://repos.fusiondirectory.org/debian-jessie/',
       key      => {
-        'id'     => 'E184859262B4981F',
+        'id'     => '5636FC267B643B144F31BCA0E184859262B4981F',
         'server' => 'keys.gnupg.net',
       },
     }
@@ -28,7 +28,6 @@ class fusiondirectory_schema {
     'fusiondirectory-plugin-netgroups-schema',
     'fusiondirectory-plugin-puppet-schema',
     'fusiondirectory-plugin-nagios-schema',
-    'fusiondirectory-plugin-apache2-schema',
   ]
 
   package { $packages:
@@ -43,6 +42,7 @@ class fusiondirectory_schema {
     openldap::server::schema { 'samba': ensure => present, path => '/etc/ldap/schema/fusiondirectory/samba.schema', require => Openldap::Server::Schema['inetorgperson'], before => Openldap::Server::Schema['core-fd']}
     openldap::server::schema { 'recovery-fd': ensure => present, path => '/etc/ldap/schema/fusiondirectory/recovery-fd.schema'}
     openldap::server::schema { 'service-fd': ensure => present, path => '/etc/ldap/schema/fusiondirectory/service-fd.schema', require => Openldap::Server::Schema['nis']}
+    openldap::server::schema { 'template-fd': ensure => present, path => '/etc/ldap/schema/fusiondirectory/template-fd.schema'}
 
     # service
     openldap::server::schema { 'systems-fd': ensure => present, path => '/etc/ldap/schema/fusiondirectory/systems-fd.schema', require => Openldap::Server::Schema['nis']}
